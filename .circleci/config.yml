@@ -1,0 +1,81 @@
+version: 2.1
+
+executors:
+  my-executor:
+    machine:
+      resource_class: logan/machine-runner-test
+
+jobs:
+  job1:
+    executor: my-executor
+    steps:
+      - run: echo "Job 1 completed"
+  job2:
+    executor: my-executor
+    steps:
+      - run: echo "Job 2 completed"
+  job3:
+    executor: my-executor
+    steps:
+      - run: echo "Job 3 completed"
+  job4:
+    executor: my-executor
+    steps:
+      - run: echo "Job 4 completed"
+  job5:
+    executor: my-executor
+    steps:
+      - run: echo "Job 5 completed"
+  job6:
+    executor: my-executor
+    steps:
+      - run: echo "Job 6 completed"
+  job7:
+    executor: my-executor
+    steps:
+      - run: echo "Job 7 completed"
+  job8:
+    executor: my-executor
+    steps:
+      - run: echo "Job 8 completed"
+  job9:
+    executor: my-executor
+    steps:
+      - run: echo "Job 9 completed"
+  job10:
+    executor: my-executor
+    steps:
+      - run: echo "Job 10 completed"
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - job1
+      - job2:
+          requires:
+            - job1
+      - job3:
+          requires:
+            - job2
+      - job4:
+          requires:
+            - job3
+      - job5:
+          requires:
+            - job4
+      - job6:
+          requires:
+            - job5
+      - job7:
+          requires:
+            - job6
+      - job8:
+          requires:
+            - job7
+      - job9:
+          requires:
+            - job8
+      - job10:
+          requires:
+            - job9
