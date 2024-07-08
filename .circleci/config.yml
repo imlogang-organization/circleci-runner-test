@@ -3,7 +3,7 @@ version: 2.1
 executors:
   my-executor:
     machine:
-      resource_class: logan/machine-runner-test
+      resource_class: imlogang-organization/machine-runner-test
 
 jobs:
   job1:
